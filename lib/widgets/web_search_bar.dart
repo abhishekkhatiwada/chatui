@@ -1,0 +1,44 @@
+import 'package:chatui/colors.dart';
+import 'package:flutter/material.dart';
+
+class WebSearchBar extends StatelessWidget {
+  const WebSearchBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.06,
+      constraints: BoxConstraints(
+          minWidth: 200, maxWidth: 300, minHeight: 40, maxHeight: 50),
+      padding: const EdgeInsets.all(10),
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(color: dividerColor),
+        ),
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: searchBarColor,
+          prefixIcon: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: Icon(Icons.search, color: Colors.grey, size: 20),
+          ),
+          hintStyle: const TextStyle(
+            fontSize: 14,
+            color: Colors.blueGrey,
+          ),
+          hintText: 'Search or start new chat',
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0),
+            borderSide: const BorderSide(
+              width: 0,
+              style: BorderStyle.none,
+            ),
+          ),
+          contentPadding: const EdgeInsets.all(10),
+        ),
+      ),
+    );
+  }
+}
